@@ -8,7 +8,9 @@ class CommentsController < ApplicationController
   		@post = Post.find(params[:comment][:post_id])
   		@comment = @post.comments.build(comment_params)
   		@comment.user_id = current_user.id
-	  	if @comment.save	  	
+	  	if @comment.save	
+	  		current_user.score += 10
+  			current_user.save  	
 		 	redirect_to root_url
 		end
 	end
