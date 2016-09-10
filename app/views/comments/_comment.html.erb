@@ -1,0 +1,13 @@
+<div class="user-name "> 
+    <%= comment.user.name %>
+</div>
+  <div class="comment-content">
+   		 <%= comment.content %>
+   		 <div class="text-right">
+			  <%if current_user == comment.user %>
+			    <p class="comment-delete"><%= link_to comment_path(comment), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
+     				<%end%>
+     				</p>
+ 				<%end%>
+  		</div>
+  </div>

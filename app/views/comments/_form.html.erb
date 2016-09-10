@@ -1,0 +1,7 @@
+<div class="comment-form col-sm-11">
+	<%= form_for [post.comments.build], html: { class: 'form-horizontal'} do |f| %>
+		<%= f.hidden_field  :post_id,  value: post.id%>
+		<%= f.text_area :content ,placeholder: "write comment",class:"comment_content", id: "comment_content_#{post.id}"%>
+		<%= f.submit  class: 'btn-success' %>
+		<% end %>
+</div>
