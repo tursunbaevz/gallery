@@ -5,7 +5,10 @@
           <%= image_tag  post.image.url(:medium), class:'img-responsive' %>
           <%= post.description  %>
           <%= render post.comments ,post: post %> 
-          <%= render 'comments/form', post: post %>            
+          <% if user_signed_in? %>
+            <%= render 'comments/form', post: post %>  
+          <% end %>
+          <div class="img" style="background-image: url('<%= image_path post.image.url(:medium) %>');"></div>         
       </div>
     <% end %>
 </div>

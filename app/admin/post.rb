@@ -14,12 +14,12 @@ ActiveAdmin.register Post do
 # end
 
 	
-    form do |f|
-      f.inputs do
-      f.input :description
-      f.input :image, :as => :file, :hint => image_tag(f.object.image.url(:thumb))
-    end
-    f.actions
+  form do |f|
+    f.inputs do
+    f.input :description
+    f.input :image, :as => :file, :hint => image_tag(f.object.image.url(:thumb))
+  end
+  f.actions
   end
 
     index do
@@ -27,9 +27,6 @@ ActiveAdmin.register Post do
     id_column
     column :image do |post|
       image_tag post.image.url(:thumb)
-    end
-    column :title do |post|
-      link_to post.title, admin_post_path(post)
     end
     actions
   end

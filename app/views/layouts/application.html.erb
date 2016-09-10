@@ -19,6 +19,7 @@
               <span class="icon-bar"></span>
             </button>
             <%= link_to 'Gallery', root_path, class: 'navbar-brand' %>
+            <%= link_to 'Admin', admin_root_path, class: 'navbar-brand' %> 
           </div>
 
           <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -30,6 +31,8 @@
                 </p>
                 <li><%= link_to 'My Profile', users_path, class: 'navbar-brand' %></li> 
                 <li><%= link_to 'New Post', new_post_path, class: 'navbar-brand' %></li> 
+                 
+
                 
                 <ul class="nav navbar-nav">
                   <li class="dropdown">
