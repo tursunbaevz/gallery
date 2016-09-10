@@ -1,0 +1,25 @@
+<% @posts.each do |post| %>
+  <div class="form-wrapper">
+      <div class="name">
+        <b><%= post.user.name %></b>      
+        <div class="avatar-post">
+         <%= image_tag(post.user.avatar.url(:thumb)) %>
+        </div> 
+      </div>
+        <div class="image center-block">  
+          <%= image_tag  post.image.url(:medium), class:'img-responsive' %>
+        </div> 
+          <%= render post.comments ,post: post %> 
+        </div>
+          <div class="comments-form">
+            <%= render 'comments/form', post: post %>
+          </div>
+
+      </div>   
+        <br>         
+  </div>
+<% end %>
+
+
+
+

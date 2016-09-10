@@ -1,0 +1,13 @@
+<%= form_for @post, html: { class: 'form-horizontal', remote: true } do |f| %>
+	<div class="form-group text-center">
+		<h4>New Post</h4>
+			 <%=  f.file_field :image %>	
+			 <%=  f.hidden_field :user_id, :value => current_user.id %>
+		   <div class="form-group text-center">
+	     <%= f.submit  class: 'btn-success' %>
+		</div>	
+	 </div>	
+	</div>
+<% end%>	
+	
+
